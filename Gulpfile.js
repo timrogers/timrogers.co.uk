@@ -29,9 +29,9 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(cleanCSS())
-    .pipe(sourcemaps.write())
     .pipe(autoprefixer())
-    .pipe(concat('style.min.css'))
+    .pipe(sourcemaps.write())
+    .pipe(concat('style.css'))
     .pipe(gulp.dest('./css'));
 });
 
