@@ -6,10 +6,7 @@ var concat = require('gulp-concat');
 var child = require('child_process');
 var gutil = require('gulp-util');
 var browserSync = require('browser-sync').create();
-var minifyCSS = require('gulp-minify-css');
-
-var SASS_INPUT = './_sass/*.scss';
-var siteRoot = '_site';
+var cleanCSS = require('gulp-clean-css');
 
 var sassOptions = {
   errLogToConsole: true,
@@ -18,20 +15,20 @@ var sassOptions = {
 
 gulp.task('serve', () => {
   browserSync.init({
-    files: [siteRoot + '/**'],
+    files: ['_site/**'],
     port: 4000,
     server: {
-      baseDir: siteRoot
+      baseDir: '_site',
     }
   });
 });
 
 gulp.task('sass', function() {
   return gulp
-    .src(SASS_INPUT)
+    .src('./_sass/base.scss')
     .pipe(sourcemaps.init())
     .pipe(sass(sassOptions).on('error', sass.logError))
-    .pipe(minifyCSS())
+    .pipe(cleanCSS())
     .pipe(sourcemaps.write())
     .pipe(autoprefixer())
     .pipe(concat('style.min.css'))
@@ -39,7 +36,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('jekyll', () => {
-  var jekyll = child.spawn('jekyll', ['build',
+  var jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build',
     '--watch',
     '--incremental',
     '--drafts'
@@ -57,7 +54,7 @@ gulp.task('jekyll', () => {
 
 gulp.task('watch:sass', function() {
   return gulp
-    .watch(SASS_INPUT, ['sass'])
+    .watch('./_sass/**/*.scss', ['sass'])
     .on('change', function(event) {
       console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
     });

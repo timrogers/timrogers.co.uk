@@ -1,6 +1,12 @@
 @import "variables";
+@import "blog-list";
+@import "button";
+@import "image";
+@import "list";
+@import "portfolio";
+@import "space";
 
-body, html {
+body {
   font-family: 'Nunito', Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -24,6 +30,10 @@ header {
   margin: 0 0 2.5em 0;
   padding: 2em 0;
   background-color: lighten($brand-color, 70%);
+
+  p {
+    font-size: 1.5em;
+  }
 }
 
 footer {
@@ -31,23 +41,16 @@ footer {
   margin: 2.5em 0 0 0;
   padding: 2em 0;
   background-color: lighten($brand-color, 70%);
-}
-
-h1 {
-  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  font-size: 1.2em;
 }
 
 h1.site-title {
+  font-family: 'Roboto Slab', serif;
+
   a {
     text-decoration: none;
   }
-}
-
-img.img-block {
-  display: block;
-  width: 100%;
-  margin: 2em auto;
-  max-width: 900px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -66,20 +69,10 @@ h3 {
   font-size: 1.5em;
 }
 
-.img-github-icon {
-  vertical-align: middle;
-}
-
 a {
   color: $brand-color;
 
   &:hover {
     color: darken($brand-color, 10%);
-  }
-}
-
-header {
-  p {
-    font-size: 1.5em;
   }
 }

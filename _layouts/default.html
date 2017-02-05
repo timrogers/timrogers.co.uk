@@ -2,11 +2,11 @@
 <html>
   <head>
     <title>{{ site.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
-    <meta name="description" content="{{ page.excerpt || site.description }}">
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.description }}{% endif %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link href="/css/style.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i|Roboto+Slab" rel="stylesheet">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
   </head>
 
   <body>
@@ -19,7 +19,7 @@
         <p>I use Ruby, PHP and other technologies to improve business processes and build products users love.</p>
 
         {% if page.path != "index.html" %}
-          <a class="button go-back-home" href="/">Back to portfolio</a>
+          <a class="button portfolio-back-button" href="/">Back to portfolio</a>
         {% endif %}
       </div>
     </header>

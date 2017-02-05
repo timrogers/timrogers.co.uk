@@ -1,10 +1,6 @@
-@import "space";
-@import "variables";
-
 ul.blog-list {
   list-style-type: none;
   font-size: 1.3em;
-  @extend .u-paddingHs;
 
   li {
     margin: 0.75em 0;

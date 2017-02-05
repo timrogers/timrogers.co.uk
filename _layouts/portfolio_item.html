@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="container u-marginBl" id="content">
+  <h2 class="u-paddingVs u-marginTm" style="margin-bottom: 0;">{{ page.title }}</h2>
+
+  {% if page.technologies %}
+    <p><b>Technologies:</b> {{ page.technologies | array_to_sentence_string }}</p>
+  {% endif %}
+</div>
+
+{{ content }}
+
+<div class="container">
+  <a class="button portfolio-back-button" href="/">Back to portfolio</a>
+</div>

@@ -977,7 +977,7 @@ a.go-back-home:before {
   margin-top: 0;
 }
 
-.portfolio-projects .portfolio-project a.read-more {
+.portfolio-projects .portfolio-project a.portfolio-project-link {
   display: inline-block;
   margin: 1em 0;
 }

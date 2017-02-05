@@ -1,50 +1,81 @@
 ---
-layout: default
+layout: portfolio_item
 title: Open-source projects
+excerpt: Tim contributes to a number of open-source projects, including maintaining the most popular Ruby Salesforce library, Restforce, downloaded over 5,000,000 times.
 ---
 
-<h2 class="u-paddingAs u-marginTm">Portfolio</h2>
+<div class="container">
+  <div class="portfolio-projects">
+    <div class="portfolio-project">
+      <h3 id="restforce">ejholmes/restforce</h3>
 
-{% include portfolio-list.html %}
+      <p><a href="https://restforce.org" target="_blank">Restforce</a> is the most popular Ruby gem for interacting with the Salesforce API, downloaded over 5,000,000 times.</p>
 
-<h2>Open-source projects</h2>
+      <p>I'm the core maintainer, having taken the gem over from the original author in 2015. I review issues, get pull requests merged and reguarly contribute my own code to the library.</p>
 
-<div class="portfolio-projects">
-  <div class="portfolio-project">
-    <h3 id="restforce">ejholmes/restforce</h3>
+      <a class="button portfolio-project-link" href="https://github.com/ejholmes/restforce" target="_blank">View on GitHub</a>
+    </div>
 
-    <p><a href="https://restforce.org">Restforce</a> is the most popular Ruby gem for interacting with the Salesforce API, downloaded over 5,000,000 times.</p>
+    <div class="portfolio-project">
+      <h3 id="rails">rails/rails</h3>
 
-    <p>I'm the core maintainer, having taken the gem over from the original author in 2015. I review issues, get pull requests merged and reguarly contribute my own code to the library.</p>
+      <p><a href="https://rubyonrails.org">Ruby on Rails</a> is a hugely popular web framework built in Ruby.</p>
 
-    <a class="button read-more" href="https://github.com/ejholmes/restforce">View on GitHub</a>
-  </div>
+      <p>I've made a number of contributions, fixing a number of bugs (including <a href="https://github.com/rails/rails/pull/25735" target="_blank">this</a> odd issue with parameter handling in <code>ActionController::Parameters</code>) and added new features <a href="https://github.com/rails/rails/pull/22826" target="_blank">making it easy to configure your web application for use over SSL</a>.</p>
 
-  <div class="portfolio-project">
-    <h3 id="onfido">hvssle/onfido</h3>
+      <a class="button portfolio-project-link" href="https://github.com/rails/rails/pulls?q=is%3Apr+is%3Aclosed+author%3Atimrogers">View on GitHub</a>
+    </div>
 
-    <p><a href="https://onfido.com">Onfido</a> provide APIs to verify people's identities and conduct background checks on your users, for example to comply with anti-money laundering regulations.</p>
+    <div class="portfolio-project">
+      <h3 id="onfido">hvssle/onfido</h3>
 
-    <p>The <a href="https://github.com/hvssle/onfido">Onfido Ruby gem</a> provides an idiomatic Ruby wrapper around their REST API.</p>
+      <p><a href="https://onfido.com" target="_blank">Onfido</a> provide APIs to verify people's identities and conduct background checks on your users, for example to comply with anti-money laundering regulations.</p>
 
-    <a class="button read-more" href="https://github.com/hvssle/onfido">View on GitHub</a>
-  </div>
+      <p>The <a href="https://github.com/hvssle/onfido" target="_blank">Onfido Ruby gem</a> provides an idiomatic Ruby wrapper around their REST API.</p>
 
-  <div class="portfolio-project">
-    <h3 id="genius">timrogers/genius</h3>
+      <a class="button portfolio-project-link" href="https://github.com/hvssle/onfido" target="_blank">View on GitHub</a>
+    </div>
 
-    <p><a href="https://genius.com">Genius</a> aims to build the world's biggest collection of song lyrics and musical knowledge - this mission has led it to being one of the web's most popular sites.</p>
+    <div class="portfolio-project">
+      <h3 id="genius">timrogers/genius</h3>
 
-    <p>My <a href="https://github.com/timrogers/genius">Genius</a> gem provides a Ruby wrapper around their developer API. It involved from my original and more popular <a href="https://github.com/timrogers/rapgenius">timrogers/rapgenius</a> gem, with 100 stars on GitHub, built by tapping into RapGenius (as they were then known)'s private API by conducting a man-in-the-middle attack on their iOS app.</p>
+      <p><a href="https://genius.com" target="_blank">Genius</a> aims to build the world's biggest collection of song lyrics and musical knowledge - this mission has led it to being one of the web's most popular sites.</p>
 
-    <a class="button read-more" href="https://github.com/timrogers/genius">View on GitHub</a>
-  </div>
+      <p>My <a href="https://github.com/timrogers/genius" target="_blank">Genius</a> gem provides a Ruby wrapper around their developer API. It involved from my original and more popular <a href="https://github.com/timrogers/rapgenius" target="_blank">timrogers/rapgenius</a> gem, with 100 stars on GitHub, built by tapping into RapGenius (as they were then known)'s private API by conducting a man-in-the-middle attack on their iOS app.</p>
 
-  <div class="portfolio-project">
-    <h3 id="tuffl">timrogers/tuffl</h3>
+      <a class="button portfolio-project-link" href="https://github.com/timrogers/genius" target="_blank">View on GitHub</a>
+    </div>
 
-    <p><a href="https://github.com/timrogers/tuffl">Tuffl</a> is a command line tool for accessing data on upcoming departures on <a href="https://tfl.gov.uk">Transport for London</a>'s public transport network. I wrote it to practice my <a href="https://crystal-lang.org/">Crystal</a> skills.</p>
+    <div class="portfolio-project">
+      <h3 id="tuffl">timrogers/tuffl</h3>
 
-    <a class="button read-more" href="https://github.com/timrogers/tuffl">View on GitHub</a>
+      <p><a href="https://github.com/timrogers/tuffl" target="_blank">Tuffl</a> is a command line tool for accessing data on upcoming departures on <a href="https://tfl.gov.uk">Transport for London</a>'s public transport network. I wrote it to practice my <a href="https://crystal-lang.org/" target="_blank">Crystal</a> skills.</p>
+
+      <a class="button portfolio-project-link" href="https://github.com/timrogers/tuffl" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="portfolio-project">
+      <h3 id="alexa-charge-customer-by-direct-debit">timrogers/alexa-charge-customer-by-direct-debit</h3>
+
+      <p>A custom Alexa skill allowing you to charge your friends by Direct Debit using <a href="https://gocardless.com" target="_blank">GoCardless</a>, written in Ruby.</p>
+
+      <a class="button portfolio-project-link" href="https://github.com/timrogers/alexa-charge-customer-by-direct-debit" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="portfolio-project">
+      <h3 id="mummy">timrogers/mummy</h3>
+
+      <p>A simple tool built in Ruby for exam revision, helping you to memorise course content.</p>
+
+      <a class="button portfolio-project-link" href="https://github.com/timrogers/mummy" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="portfolio-project">
+      <h3 id="jekyll-esv">timrogers/jekyll-esv</h3>
+
+      <p>A Jekyll plugin, written in Ruby, making it easy to link to Bible passages in the <a href="http://esvbible.org" target="_blank">English Standard Version</a> Bible.</p>
+
+      <a class="button portfolio-project-link" href="https://github.com/timrogers/jekyll-esv" target="_blank">View on GitHub</a>
+    </div>
   </div>
 </div>

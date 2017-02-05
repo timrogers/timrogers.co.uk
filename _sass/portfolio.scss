@@ -1,7 +1,7 @@
 @import "space";
 @import "variables";
 
-a.go-back-home {
+a.portfolio-back-button {
   display: inline-block;
   margin: 0.8em 0;
   padding: 8px 16px;
@@ -24,7 +24,7 @@ a.go-back-home {
       border-bottom: 2px solid white;
 
       &:hover {
-        background-color: darken($brand-color, 5%);
+        background-color: darken($brand-color, 10%);
       }
     }
   }
@@ -39,7 +39,7 @@ a.go-back-home {
       margin-top: 0;
     }
 
-    a.read-more {
+    a.portfolio-project-link {
       display: inline-block;
       margin: 1em 0;
     }
