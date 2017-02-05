@@ -1,0 +1,85 @@
+@import "variables";
+
+body, html {
+  font-family: 'Nunito', Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+@media (min-width: 750px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+.container {
+  width: 85%;
+  max-width: 900px;
+  margin: auto;
+}
+
+header {
+  width: 100%;
+  margin: 0 0 2.5em 0;
+  padding: 2em 0;
+  background-color: lighten($brand-color, 70%);
+}
+
+footer {
+  width: 100;
+  margin: 2.5em 0 0 0;
+  padding: 2em 0;
+  background-color: lighten($brand-color, 70%);
+}
+
+h1 {
+  font-family: 'Roboto Slab', serif;
+}
+
+h1.site-title {
+  a {
+    text-decoration: none;
+  }
+}
+
+img.img-block {
+  display: block;
+  width: 100%;
+  margin: 2em auto;
+  max-width: 900px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: $brand-color;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.4em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.img-github-icon {
+  vertical-align: middle;
+}
+
+a {
+  color: $brand-color;
+
+  &:hover {
+    color: darken($brand-color, 10%);
+  }
+}
+
+header {
+  p {
+    font-size: 1.5em;
+  }
+}

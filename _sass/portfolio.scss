@@ -1,0 +1,53 @@
+@import "space";
+@import "variables";
+
+a.go-back-home {
+  display: inline-block;
+  margin: 0.8em 0;
+  padding: 8px 16px;
+  font-size: 1.3em;
+
+  &:before {
+    content: "« ";
+  }
+}
+
+.portfolio-list {
+  .portfolio-list-item {
+    a {
+      border-radius: 3px;
+      background-color: $brand-color;
+      @extend .u-paddingAl;
+      color: #FFF;
+      display: block;
+      text-decoration: none;
+      border-bottom: 2px solid white;
+
+      &:hover {
+        background-color: darken($brand-color, 5%);
+      }
+    }
+  }
+}
+
+.portfolio-projects {
+  .portfolio-project {
+    padding: 2.5em 0;
+    border-top: 1px solid $brand-color;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    a.read-more {
+      display: inline-block;
+      margin: 1em 0;
+    }
+
+
+    &:first-child {
+      padding-top: 0;
+      border-top: none;
+    } 
+  } 
+}

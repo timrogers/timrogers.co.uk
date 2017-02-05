@@ -1,0 +1,14 @@
+@import "variables";
+
+a.button {
+  background-color: $brand-color;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 8px 12px;
+
+  &:hover {
+    color: #FFF;
+    background-color: darken($brand-color, 15%);
+  }
+}
