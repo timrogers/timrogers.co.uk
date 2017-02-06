@@ -18,5 +18,8 @@
     "start": "bundle && gulp"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-imagemin": "^3.1.1"
+  }
 }

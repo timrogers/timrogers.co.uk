@@ -7,6 +7,7 @@ var child = require('child_process');
 var gutil = require('gulp-util');
 var browserSync = require('browser-sync').create();
 var cleanCSS = require('gulp-clean-css');
+var imagemin = require('gulp-imagemin');
 
 var sassOptions = {
   errLogToConsole: true,
@@ -35,6 +36,13 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('./css'));
 });
 
+gulp.task('images', function() {
+  return gulp
+    .src('./_images/**/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./images'));
+});
+
 gulp.task('jekyll', () => {
   var jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build',
     '--watch',
@@ -60,4 +68,12 @@ gulp.task('watch:sass', function() {
     });
 });
 
-gulp.task('default', ['sass', 'jekyll', 'watch:sass', 'serve']);
+gulp.task('watch:images', function() {
+  return gulp
+    .watch('./_images/**/*', ['images'])
+    .on('change', function(event) {
+      console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+    });
+});
+
+gulp.task('default', ['sass', 'images', 'jekyll', 'watch:sass', 'watch:images', 'serve']);

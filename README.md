@@ -2,7 +2,7 @@
 
 ## Usage
 
-The site is building using the Ruby gem [Jekyll](https://jekyllrb.com), with a build toolchain based on [Gulp](http://gulpjs.com/), which runs Jekyll, compiles the CSS (converting it from SASS, adding sourcemaps, minifying it and piping it into the output directory) and serves the site with [Browsersync](https://browsersync.io/)), refreshing automatically whenever changes occur to the source.
+The site is building using the Ruby gem [Jekyll](https://jekyllrb.com), with a build toolchain based on [Gulp](http://gulpjs.com/), which runs Jekyll, compiles the CSS (converting it from SASS, adding sourcemaps, minifying it and piping it into the output directory), compresses images and serves the site with [Browsersync](https://browsersync.io/)), refreshing automatically whenever changes occur to the source.
 
 1. The first time you try to build the site, install the dependencies by running `npm install`
 2. Build the site - just run `npm start`! (We'll automatically make sure Jekyll and other Ruby dependencies are installed with Bundler.)
