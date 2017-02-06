@@ -1,0 +1,108 @@
+s3_id: <%= ENV['S3_ACCESS_KEY_ID'] %>
+s3_secret: <%= ENV['S3_ACCESS_KEY_SECRET'] %>
+s3_bucket: timrogers.co.uk
+
+# Below are examples of all the available configurations.
+# See README for more detailed info on each of them.
+
+site: _site
+
+index_document: index.html
+error_document: error.html
+
+# max_age:
+#   "assets/*": 6000
+#   "*": 300
+
+gzip:
+  - .html
+  - .css
+gzip_zopfli: true
+
+# See http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region for valid endpoints
+s3_endpoint: eu-west-1
+
+# ignore_on_server: that_folder_of_stuff_i_dont_keep_locally
+
+# exclude_from_upload:
+#   - those_folders_of_stuff
+#   - i_wouldnt_want_to_upload
+
+# s3_reduced_redundancy: true
+
+cloudfront_distribution_id: E22BFSSR7M2875
+
+# cloudfront_distribution_config:
+#   default_cache_behavior:
+#     min_TTL: <%= 60 * 60 * 24 %>
+#   aliases:
+#     quantity: 1
+#     items:
+#       CNAME: your.website.com
+
+cloudfront_invalidate_root: true
+
+cloudfront_wildcard_invalidation: true
+
+# concurrency_level: 5
+
+redirects:
+    2012/08/03/welcome-one-and-all: http://archive.timrogers.co.uk/2012/08/03/welcome-one-and-all/
+    2012/08/07/trouble-in-paradise-or-not: http://archive.timrogers.co.uk/2012/08/07/trouble-in-paradise-or-not/
+    2012/08/14/1and1-ask-for-passwords-over-the-phone: http://archive.timrogers.co.uk/2012/08/14/1and1-ask-for-passwords-over-the-phone/
+    2012/08/27/free-will: http://archive.timrogers.co.uk/2012/08/27/free-will/
+    2012/09/04/no-going-back: http://archive.timrogers.co.uk/2012/09/04/no-going-back/
+    2012/09/06/on-the-cosmological-argument: http://archive.timrogers.co.uk/2012/09/06/on-the-cosmological-argument/
+    2012/09/07/pascals-wager: http://archive.timrogers.co.uk/2012/09/07/pascals-wager/
+    2012/09/14/on-morality: http://archive.timrogers.co.uk/2012/09/14/on-morality/
+    2012/09/26/the-path-to-knowledge: http://archive.timrogers.co.uk/2012/09/26/the-path-to-knowledge/
+    2012/09/30/and-its-out-with-the-old: http://archive.timrogers.co.uk/2012/09/30/and-its-out-with-the-old/
+    2012/10/14/ucas-universities-and-open-data: http://archive.timrogers.co.uk/2012/10/14/ucas-universities-and-open-data/
+    2012/10/31/a-two-speed-economy: http://archive.timrogers.co.uk/2012/10/31/a-two-speed-economy/
+    2013/01/05/a-revolution-in-banking: http://archive.timrogers.co.uk/2013/01/05/a-revolution-in-banking/
+    2013/01/22/data-driven-support-at-gocardless: http://archive.timrogers.co.uk/2013/01/22/data-driven-support-at-gocardless/
+    2013/01/22/washington-monument: http://archive.timrogers.co.uk/2013/01/22/washington-monument/
+    2013/01/24/enter-vine: http://archive.timrogers.co.uk/2013/01/24/enter-vine/
+    2013/01/24/getting-3g-on-your-mobile-in-the-usa: http://archive.timrogers.co.uk/2013/01/24/getting-3g-on-your-mobile-in-the-usa/
+    2013/02/16/managing-your-jekyll-assets-with-guard open-graph-tags: http://archive.timrogers.co.uk/2013/02/16/managing-your-jekyll-assets-with-guard open-graph-tags/
+    2013/02/16/new-domain-new-design: http://archive.timrogers.co.uk/2013/02/16/new-domain-new-design/
+    2013/02/17/welcome-to-dubai: http://archive.timrogers.co.uk/2013/02/17/welcome-to-dubai/
+    2013/02/18/hotel-slippers: http://archive.timrogers.co.uk/2013/02/18/hotel-slippers/
+    2013/02/19/bastakiya: http://archive.timrogers.co.uk/2013/02/19/bastakiya/
+    2013/02/20/madinat-jumeirah-and-the-palm: http://archive.timrogers.co.uk/2013/02/20/madinat-jumeirah-and-the-palm/
+    2013/02/21/the-walk-and-the-mall-of-the-emirates: http://archive.timrogers.co.uk/2013/02/21/the-walk-and-the-mall-of-the-emirates/
+    2013/02/23/dubai-an-economy-of-illusions: http://archive.timrogers.co.uk/2013/02/23/dubai-an-economy-of-illusions
+    2013/02/25/kanye-west-at-the-hammersmith-apollo: http://archive.timrogers.co.uk/2013/02/25/kanye-west-at-the-hammersmith-apollo
+    2013/03/07/a-weekend-in-berlin: http://archive.timrogers.co.uk/2013/03/07/a-weekend-in-berlin/
+    2013/03/08/5am-in-toronto: http://archive.timrogers.co.uk/2013/03/08/5am-in-toronto/
+    2013/03/09/the-wonders-of-street-view: http://archive.timrogers.co.uk/2013/03/09/the-wonders-of-street-view/
+    2013/03/23/the-demise-of-google-reader: http://archive.timrogers.co.uk/2013/03/23/the-demise-of-google-reader/
+    2013/04/23/a-look-at-the-boston-bomber-indictment: http://archive.timrogers.co.uk/2013/04/23/a-look-at-the-boston-bomber-indictment/
+    2013/04/30/edgecall-and-the-power-of-twilio: http://archive.timrogers.co.uk/2013/04/30/edgecall-and-the-power-of-twilio/
+    2013/08/17/ballin-with-my-own-rapgenius-api: http://archive.timrogers.co.uk/2013/08/17/ballin-with-my-own-rapgenius-api/
+    2014/01/28/so-its-out-with-the-old: http://archive.timrogers.co.uk/2014/01/28/so-its-out-with-the-old/
+    2014/02/09/why-ive-switched-from-chrome-to-safari: http://archive.timrogers.co.uk/2014/02/09/why-ive-switched-from-chrome-to-safari/
+    2014/07/12/discovering-private-apis-with-charles-app: http://archive.timrogers.co.uk/2014/07/12/discovering-private-apis-with-charles-app/
+    2014/07/12/king-of-the-fall: http://archive.timrogers.co.uk/2014/07/12/king-of-the-fall/
+    2014/08/18/point-hacks-calculator: http://archive.timrogers.co.uk/2014/08/18/point-hacks-calculator/
+    2014/12/02/twilio-best-practices: http://archive.timrogers.co.uk/2014/12/02/twilio-best-practices/
+    2015/01/29/prevent-duty-guidance: http://archive.timrogers.co.uk/2015/01/29/prevent-duty-guidance/
+    2015/05/03/7daybiblechallenge-day-1-1-john-3-2: http://archive.timrogers.co.uk/2015/05/03/7daybiblechallenge-day-1-1-john-3-2/
+    2015/05/04/7daybiblechallenge-day-2-1-timothy-2-1-6: http://archive.timrogers.co.uk/2015/05/04/7daybiblechallenge-day-2-1-timothy-2-1-6/
+    2015/05/05/7daybiblechallenge-day-3-acts-2-22-28: http://archive.timrogers.co.uk/2015/05/05/7daybiblechallenge-day-3-acts-2-22-28/
+    2015/05/06/7daybiblechallenge-day-4-philippians-2-1-11: http://archive.timrogers.co.uk/2015/05/06/7daybiblechallenge-day-4-philippians-2-1-11/
+    2015/05/09/7daybiblechallenge-day-5-isaiah-53: http://archive.timrogers.co.uk/2015/05/09/7daybiblechallenge-day-5-isaiah-53/
+    2015/05/10/7daybiblechallenge-day-6-matthew-10-34-39: http://archive.timrogers.co.uk/2015/05/10/7daybiblechallenge-day-6-matthew-10-34-39/
+    2015/05/11/7daybiblechallenge-day-7-matthew-21-12-17: http://archive.timrogers.co.uk/2015/05/11/7daybiblechallenge-day-7-matthew-21-12-17/
+#   index.php: /
+#   about.php: about.html
+#   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+
+# routing_rules:
+#   - condition:
+#       key_prefix_equals: blog/some_path
+#     redirect:
+#       host_name: blog.example.com
+#       replace_key_prefix_with: some_new_path/
+#       http_redirect_code: 301
