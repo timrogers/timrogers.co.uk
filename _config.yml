@@ -31,3 +31,4 @@ exclude:
   - package.json
   - README.md
   - scripts
+  - s3_website.yml
