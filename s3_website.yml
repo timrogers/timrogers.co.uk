@@ -141,6 +141,10 @@ redirects:
     2015/05/09/7daybiblechallenge-day-5-isaiah-53/index.html: http://archive.timrogers.co.uk/2015/05/09/7daybiblechallenge-day-5-isaiah-53/
     2015/05/10/7daybiblechallenge-day-6-matthew-10-34-39/index.html: http://archive.timrogers.co.uk/2015/05/10/7daybiblechallenge-day-6-matthew-10-34-39/
     2015/05/11/7daybiblechallenge-day-7-matthew-21-12-17/index.html: http://archive.timrogers.co.uk/2015/05/11/7daybiblechallenge-day-7-matthew-21-12-17/
+    portfolio: /
+    portfolio/index.html: /
+    contact: /
+    contact/index.html: /
 #   index.php: /
 #   about.php: about.html
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
