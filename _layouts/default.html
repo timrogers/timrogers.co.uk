@@ -9,7 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Roboto+Slab:700" rel="stylesheet">
+    {% if page.path != "error.html" %}
     <link rel="canonical" href="{{ page.url | absolute_url }}">
+    {% endif %}
     <link rel="icon" type="image/png" href="/images/favicon.png">
   </head>
 
@@ -22,7 +24,7 @@
 
         <p>I use Ruby, PHP and other technologies to improve business processes and build products users love.</p>
 
-        {% if page.path != "index.html" %}
+        {% if !(page.path contains "portfolio") %}
           <a class="button portfolio-back-button" href="/">Back to portfolio</a>
         {% endif %}
       </div>
