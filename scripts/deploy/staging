@@ -1,4 +1,3 @@
 #!/bin/bash
 
-bundle exec jekyll build --drafts
 S3_BUCKET=staging.timrogers.co.uk s3_website push

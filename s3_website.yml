@@ -30,9 +30,9 @@ s3_endpoint: eu-west-1
 # s3_reduced_redundancy: true
 
 <% if ENV['S3_BUCKET'] == 'timrogers.co.uk' %>
-  cloudfront_distribution_id: <%= ENV['CLOUDFRONT_DISTRIBUTION_ID'] %>
-  cloudfront_invalidate_root: true
-  cloudfront_wildcard_invalidation: true
+cloudfront_distribution_id: <%= ENV['CLOUDFRONT_DISTRIBUTION_ID'] %>
+cloudfront_invalidate_root: true
+cloudfront_wildcard_invalidation: true
 <% end %>
 
 # concurrency_level: 5

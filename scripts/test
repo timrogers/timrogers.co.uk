@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+require "html-proofer"
+
+puts `bundle exec jekyll build --drafts`
+
+HTMLProofer.check_directory('./_site', 
+                            url_swap: {
+                              'https://timrogers.co.uk' => '',
+                            }).run

@@ -77,3 +77,4 @@ gulp.task('watch:images', function() {
 });
 
 gulp.task('default', ['sass', 'images', 'jekyll', 'watch:sass', 'watch:images', 'serve']);
+gulp.task('assets:build', ['sass', 'images']);

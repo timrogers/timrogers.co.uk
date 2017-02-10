@@ -7,6 +7,7 @@ The site is building using the Ruby gem [Jekyll](https://jekyllrb.com), with a b
 1. The first time you try to build the site, install the dependencies by running `npm install`
 2. Build the site - just run `npm start`! (We'll automatically make sure Jekyll and other Ruby dependencies are installed with Bundler.)
 3. Head to <http://localhost:4000>. The site will automatically be updated on screen when you make changes to the SASS files (in `_sass`) or the Jekyll source.
-3. Deploy into the staging environment, `staging.timrogers.co.uk`, by running `scripts/deploy/staging`
-4. Once you're ready to go live, deploy the site - just run `scripts/deploy/production`.
+4. Test the site using HTMLProofer by running `scripts/test`
+5. Deploy into the staging environment, `staging.timrogers.co.uk`, by running `scripts/deploy/staging` (you'll need to have run `gulp` first).
+6. Once you're ready to go live, deploy the site - just run `scripts/deploy/production` (you'll need to have run `gulp` first).
 
