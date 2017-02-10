@@ -24,7 +24,6 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 exclude:
-  - vendor
   - Gemfile
   - Gemfile.lock
   - Gulpfile.js
@@ -33,3 +32,5 @@ exclude:
   - README.md
   - scripts
   - s3_website.yml
+  - circle.yml
+  - vendor
