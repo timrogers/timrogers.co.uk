@@ -10,8 +10,10 @@ test:
   override:
     - bundle exec scripts/test
 deployment:
-  override:
-    - bundle exec s3_website push
+  master:
+    branch: [master]
+    commands:
+      - bundle exec s3_website push
 
 machine:
   node:
