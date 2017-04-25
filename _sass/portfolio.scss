@@ -12,6 +12,11 @@ a.portfolio-back-button {
   }
 }
 
+.portfolio-item-time-period {
+  color: #333333;
+  padding-left: 3px;
+}
+
 .portfolio-list {
   .portfolio-list-item {
     a {
@@ -26,6 +31,11 @@ a.portfolio-back-button {
       &:hover {
         background-color: darken($brand-color, 10%);
       }
+    }
+
+    .portfolio-list-item-date {
+      color: #FFF;
+      opacity: 0.7;
     }
   }
 }

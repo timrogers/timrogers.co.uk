@@ -3,7 +3,13 @@ layout: default
 ---
 
 <div class="container u-marginBl" id="content">
-  <h2 class="u-paddingVs u-marginTm" style="margin-bottom: 0;">{{ page.title }}</h2>
+  <h2 class="u-paddingVs u-marginTm" style="margin-bottom: 0;">
+    {{ page.title }}
+  </h2>
+
+  {% if page.time_period %}
+    <div class="portfolio-item-time-period">{{ page.time_period }}</div>
+  {% endif %}
 
   {% if page.technologies %}
     <p><b>Technologies:</b> {{ page.technologies | array_to_sentence_string }}</p>
