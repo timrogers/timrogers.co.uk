@@ -2,7 +2,6 @@
 <Response>
   <Dial callerId="+441290211999">
     <Number>+447969288259</Number>
-    <Number>+447914878874</Number>
   </Dial>
 
   <Say voice="alice">The person on the other end hung up.</Say>
