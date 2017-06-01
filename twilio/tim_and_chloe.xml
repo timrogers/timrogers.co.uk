@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Dial callerId="+441290211999">
+    <Number>+447940549656</Number>
+    <Number>+447969288259</Number>
+  </Dial>
+
+  <Say voice="alice">The person on the other end hung up.</Say>
+</Response>
+
