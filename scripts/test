@@ -7,4 +7,9 @@ puts `bundle exec jekyll build --drafts`
 HTMLProofer.check_directory('./_site', 
                             url_swap: {
                               'https://timrogers.co.uk' => '',
+                            },
+                            typhoeus: {
+                              headers: HTMLProofer::Configuration::TYPHOEUS_DEFAULTS[:headers].merge({
+                                "Accept" => "text/html"
+                              })
                             }).run
