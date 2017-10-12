@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Play digits="w#w#"></Play>
+
+  <Say voice="alice" language="en-GB">Please leave packages inside the main door.</Say>
+  <Message to="+447969288259">The door has been opened.</Message>
+</Response>
+
