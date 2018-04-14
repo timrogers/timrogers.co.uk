@@ -1,7 +1,7 @@
 dependencies:
   override:
-    - npm install -g gulp
-    - npm install
+    - yarn global add gulp
+    - yarn
     - bundle install --path=vendor/bundle --jobs=4 --retry=3
 compile:
   override:
