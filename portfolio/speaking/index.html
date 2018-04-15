@@ -1,0 +1,46 @@
+---
+layout: portfolio_item
+title: Speaking
+excerpt: Tim regularly speaks at conferences on software engineering, technical writing,
+  product management and more.
+---
+
+<div class="container u-marginBl">
+  <h3 id="miles-more-maintainable" class="u-marginTl">Miles more maintainable: building APIs with the middleware pattern</h3>
+
+  <p>When you’re building an API, things start off simple. But before you know it, there’s lots of logic you want to build abstractions
+  around and reuse - for example authentication, input validation and pagination. In the world of Rails, this usually means having a long list of
+  callbacks living in your <code>ApplicationController</code> using ActionController’s <code>before_action</code> magic.</p>
+
+  <p>This leads to:</p>
+
+  <ul>
+    <li><b>tangled data dependencies</b>: callbacks depend on data retrieved by other callbacks and stored in instance variables -
+    the authenticated user, for example - making your code hard to reason about</li>
+    <li><b>hidden behaviour</b>: where all those <code>except</code>s and <code>only</code>s on your <code>before_action</code>s are hard to reason about and separated from your code,
+    usually living in <code>ApplicationController</code>!</li>
+    <li><b>difficulties with testing</b>: unit testing methods inside a controller is hard!</li>
+  </ul>
+
+  <p>The middleware pattern can help us to bring sanity to our APIs and make them miles more maintainable.</p>
+
+  <p>This talk is based on a blog post I wrote, <a href="https://gocardless.com/blog/getting-started-with-coach/" target="_blank">“When good controllers go bad: getting started with Coach”</a>.</p>
+
+  <p>I am giving this talk at <a href="https://rubyc.eu/" target="_blank">RubyC</a> in Kiev, Ukraine 🇺🇦 on 2nd-3rd June 2018, and at <a href="http://rubyconf.nairuby.org/2018" target="_blank">RubyConf Kenya 2018</a> in Nairobi, Kenya 🇰🇪 on 28th-30th June 2018.</p>
+</div>
+
+<div class="container u-marginBl">
+  <h3 id="writing-great-getting-started-documentation" class="u-marginTl">“You never get a second chance to make a first impression”: Writing great "getting started" documentation</h3>
+
+  <p>As the old saying goes, “you never get a second chance to make a first impression”. When you first meet someone new (not
+  least at a conference for documentarians!), those first few moments set the tone. In exactly the same way, the experience
+  your user has when they first “meet” your product and get to grips with it will set the tone for your entire relationship
+  with them.</p>
+
+  <p>This talk looks at how you can make a great first impression with the "getting started" documentation for your API, working alongside your reference docs, seeking not only to teach the user how to use our product, but also to explain the fundamental concepts behind it and to
+  bring the user to the all-important “aha!” moment where they see the value in what we’re offering.</p>
+
+  <p>I gave this talk at <a href="http://www.writethedocs.org/videos/eu/2017/you-never-get-a-second-chance-to-make-a-first-impression-writing-great-getting-started-documentation-tim-rogers/" target="_blank">Write the Docs EU 2017</a> in Prague, Czech Republic 🇨🇿. I'm planning to do it again soon.</p>
+
+  <a class="button portfolio-project-link" href="https://www.youtube.com/watch?v=wqC88GNujWQ" target="_blank">Watch on YouTube</a>
+</div>
