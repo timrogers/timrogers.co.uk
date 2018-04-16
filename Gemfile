@@ -1,5 +1,5 @@
 source "https://rubygems.org"
 
-gem 'jekyll', '~> 3.4.0'
+gem 'jekyll', '~> 3.6.2'
 gem 'html-proofer'
 gem 's3_website'
