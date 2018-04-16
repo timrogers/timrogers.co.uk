@@ -53,6 +53,11 @@ h1.site-title {
   }
 }
 
+.copyright-notice {
+  font-size: 0.75em;
+  color: lighten(#000, 50%);
+}
+
 h1, h2, h3, h4, h5 {
   color: $brand-color;
 }
