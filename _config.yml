@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Tim Rogers
 email: me@timrogers.co.uk
-description: Tim Rogers is a software engineer from London, UK, working at GoCardless. He uses Ruby, PHP and other technologies to improve business processes and build products users love.
+description: Tim Rogers is a software engineer from London, UK. He founded BA Redemption Finder and works at Avios..
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://timrogers.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
