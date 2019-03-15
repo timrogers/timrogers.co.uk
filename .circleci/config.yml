@@ -42,6 +42,8 @@ jobs:
     steps:
       - checkout
 
+      - run: sudo apt-get update
+
       - run: sudo apt-get install --assume-yes openjdk-8-jre
 
       - type: cache-restore
