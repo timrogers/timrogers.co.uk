@@ -42,6 +42,14 @@ header {
       opacity: 0.5;
     }
   }
+
+  .blog-link {
+    display: block;
+    font-size: 1.3em;
+    border: 2px solid $brand-color;
+    padding: 1em;
+    margin: 1.5em 0 1.2em 0;
+  }
 }
 
 footer {
@@ -59,11 +67,6 @@ h1.site-title {
   a {
     text-decoration: none;
   }
-}
-
-.copyright-notice {
-  font-size: 0.75em;
-  color: lighten(#000, 50%);
 }
 
 h1, h2, h3, h4, h5 {

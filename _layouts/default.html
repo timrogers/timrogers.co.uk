@@ -5,7 +5,7 @@
     <title>{{ site.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.description }}{% endif %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="keywords" content="tim, rogers, developer, gocardless, avios, duffel, twilio, london, ba redemption finder, reward flight finder, ruby, javascript, php, elixir, rails, restforce">
+    <meta name="keywords" content="tim, rogers, developer, duffel, gocardless, avios, duffel, twilio, london, ba redemption finder, reward flight finder, ruby, javascript, php, elixir, rails, restforce">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Roboto+Slab:700" rel="stylesheet">
@@ -20,12 +20,21 @@
       <div class="container">
         <h1 class="site-title"><a href="/">Tim Rogers</a></h1>
 
-        <p>I'm a software engineer from London, UK. I work at <a href="https://duffel.com/" target="_blank">Duffel</a> and run my own startup, <a href="https://rewardflightfinder.com" target="_blank">Reward Flight Finder</a>, in my spare time.
+        <p>I am based in London, UK 🇬🇧 and I lead product at <a href="https://duffel.com/" target="_blank">Duffel</a>. We're building the best API to sell flights online.</p>
 
-        <p>I use Ruby, Elixir, JavaScript and other technologies to build products users love.</p>
+        <p>Before Duffel, I was an early employee at <a href="https://gocardless.com" target="_blank">GoCardless</a> and I ran my own startup, <a href="https://rewardflightfinder.com" target="_blank">Reward Flight Finder</a>, which was acquired in 2020.</p>
 
         {% if page.path contains "portfolio" %}
-          <a class="button portfolio-back-button" href="/">Back to portfolio</a>
+          <a class="portfolio-back" href="/">Back to portfolio</a>
+        {% endif %}
+
+        {% if page.path == "index.html" %}
+          <p class="blog-link">
+            <b>Latest from me on the Duffel blog <a href="https://duffel.com/" target="_blank"></a><img
+                src="/images/duffel-icon@2x.png" alt="Duffel symbol" width="24px" class="img-icon"
+                style="padding-bottom: 6px" /></a>:</b> <a href="https://duffel.com/blog/what-happens-when-i-book-a-flight/"
+              target="_blank">"What happens when I book a flight?"</a>
+          </p>
         {% endif %}
       </div>
     </header>
@@ -34,9 +43,7 @@
 
     <footer>
       <div class="container">
-        <p class="get-in-touch"><b>Want to get in touch?</b> Drop me an email at <a href="mailto:me@timrogers.co.uk">me@timrogers.co.uk</a> <a href="https://github.com/timrogers" target="_blank" alt="@timrogers on GitHub"><img src="/images/GitHub-Mark-120px-plus.png" alt="GitHub logo" width="24px" class="img-github-icon" /></a></p>
-
-        <p class="copyright-notice">&copy; Tim Rogers.</p>
+        <p class="get-in-touch"><b>Want to get in touch?</b> Drop me an email at <a href="mailto:me@timrogers.co.uk">me@timrogers.co.uk</a> <a href="https://github.com/timrogers" target="_blank" alt="@timrogers on GitHub"><img src="/images/GitHub-Mark-120px-plus.png" alt="GitHub logo" width="24px" class="img-icon" /></a></p>
       </div>
     </footer>
 

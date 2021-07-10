@@ -4,3 +4,4 @@ _site
 node_modules
 .env
 .jekyll-cache
+.DS_Store
