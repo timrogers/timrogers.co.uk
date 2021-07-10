@@ -1,61 +1,25 @@
-version: 2
+version: 2.1
+orbs:
+  ruby: circleci/ruby@1.0
 jobs:
   build-and-test:
     docker:
-      - image: circleci/ruby:3.0.2
+      - image: cimg/ruby:3.0.2
     steps:
       - checkout
-
-      - type: cache-restore
-        key: timrogers-bundler-v2-{{ checksum "Gemfile.lock" }}
-
-      - run: bundle install --path vendor/bundle
-
-      - type: cache-save
-        key: timrogers-bunder-v2-{{ checksum "Gemfile.lock" }}
-        paths:
-          - vendor/bundle
-
+      - ruby/install-deps
       - run: bundle exec jekyll build
-
       - run: bundle exec scripts/test
   build-and-deploy:
     docker:
-      - image: circleci/ruby:3.0.2
+      - image: cimg/ruby:3.0.2
     steps:
       - checkout
-
       - run: sudo apt-get update
-
       - run: sudo apt-get install --assume-yes openjdk-8-jre
-
-      - type: cache-restore
-        key: timrogers-bundler-v1-{{ checksum "Gemfile.lock" }}
-
-      - run: bundle install --path vendor/bundle
-
-      - type: cache-save
-        key: timrogers-bunder-v1-{{ checksum "Gemfile.lock" }}
-        paths:
-          - vendor/bundle
-
-      - type: cache-restore
-        key: timrogers-yarn-v1-{{ checksum "yarn.lock" }}
-
-      - run: yarn install
-
-      - type: cache-save
-        key: timrogers-yarn-v1-{{ checksum "yarn.lock" }}
-        paths:
-          - "~/.cache/yarn"
-          - "~/.yarn"
-
-      - run: node_modules/.bin/gulp assets:build
-
+      - ruby/install-deps
       - run: bundle exec jekyll build
-
       - run: bundle exec s3_website install
-
       - run: java -cp $(bundle show s3_website)/*.jar s3.website.Push
 workflows:
   version: 2
