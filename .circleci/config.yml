@@ -12,11 +12,9 @@ jobs:
       - run: bundle exec scripts/test
   build-and-deploy:
     docker:
-      - image: cimg/ruby:3.0.2
+      - image: timrogers/ruby-with-openjdk-8-jre:3.0.2
     steps:
       - checkout
-      - run: sudo apt-get update
-      - run: sudo apt-get install --assume-yes openjdk-8-jre
       - ruby/install-deps
       - run: bundle exec jekyll build
       - run: bundle exec s3_website install
