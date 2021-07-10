@@ -2,43 +2,26 @@ version: 2
 jobs:
   build-and-test:
     docker:
-      - image: circleci/ruby:2.6.0-node
+      - image: circleci/ruby:3.0.2
     steps:
       - checkout
 
       - type: cache-restore
-        key: timrogers-bundler-v1-{{ checksum "Gemfile.lock" }}
-
-      - run: gem update --system
-
-      - run: gem install bundler --pre
+        key: timrogers-bundler-v2-{{ checksum "Gemfile.lock" }}
 
       - run: bundle install --path vendor/bundle
 
       - type: cache-save
-        key: timrogers-bunder-v1-{{ checksum "Gemfile.lock" }}
+        key: timrogers-bunder-v2-{{ checksum "Gemfile.lock" }}
         paths:
           - vendor/bundle
-
-      - type: cache-restore
-        key: timrogers-yarn-v1-{{ checksum "yarn.lock" }}
-
-      - run: yarn install
-
-      - type: cache-save
-        key: timrogers-yarn-v1-{{ checksum "yarn.lock" }}
-        paths:
-          - "~/.cache/yarn"
-          - "~/.yarn"
-
-      - run: node_modules/.bin/gulp assets:build
 
       - run: bundle exec jekyll build
 
       - run: bundle exec scripts/test
   build-and-deploy:
     docker:
-      - image: circleci/ruby:2.6.0-node
+      - image: circleci/ruby:3.0.2
     steps:
       - checkout
 
@@ -48,10 +31,6 @@ jobs:
 
       - type: cache-restore
         key: timrogers-bundler-v1-{{ checksum "Gemfile.lock" }}
-
-      - run: gem update --system
-
-      - run: gem install bundler --pre
 
       - run: bundle install --path vendor/bundle
 

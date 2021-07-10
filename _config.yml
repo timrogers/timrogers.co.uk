@@ -26,11 +26,6 @@ markdown: kramdown
 exclude:
   - Gemfile
   - Gemfile.lock
-  - Gulpfile.js
-  - node_modules
-  - package.json
   - README.md
   - scripts
   - s3_website.yml
-  - circle.yml
-  - vendor
