@@ -2,12 +2,21 @@
 
 ## Usage
 
-The site is building using the Ruby gem [Jekyll](https://jekyllrb.com), with a build toolchain based on [Gulp](http://gulpjs.com/), which runs Jekyll, compiles the CSS (converting it from SASS, adding sourcemaps, minifying it and piping it into the output directory), compresses images and serves the site with [Browsersync](https://browsersync.io/)), refreshing automatically whenever changes occur to the source.
+The site is built using the Ruby gem [Jekyll](https://jekyllrb.com).
 
-1. The first time you try to build the site, install the dependencies by running `npm install`
-2. Build the site - just run `npm start`! (We'll automatically make sure Jekyll and other Ruby dependencies are installed with Bundler.)
-3. Head to <http://localhost:4000/>. The site will automatically be updated on screen when you make changes to the SASS files (in `_sass`) or the Jekyll source.
-4. Test the site using HTMLProofer by running `scripts/test`
-5. Deploy into the staging environment, `staging.timrogers.co.uk`, by running `scripts/deploy/staging` (you'll need to have run `gulp` first).
-6. Once you're ready to go live, deploy the site - just run `scripts/deploy/production` (you'll need to have run `gulp` first).
+### Running locally with Ruby
+
+1. Install the dependencies by running `bundle`
+2. Start Jekyll by running `bundle exec jekyll --serve`
+3. Go to <http://localhost:4000>
+4. When you make changes to the site (pages, CSS, etc.), they will be reflected automatically. If you update the Jekyll `_config.yml`, you'll need to restart `jekyll`. If you change the `Gemfile`, you will need to re-run `bundle` and then restart `jekyll`.
+
+### Running locally with Docker
+
+1. Start Jekyll by running `docker compose up`
+2. Go to <http://localhost:4000>
+3. When you make changes to the site (pages, CSS, etc.), they will be reflected automatically. If you update the Jekyll `_config.yml`, you'll need to restart the container. If you change the `Gemfile` or Docker configuration, you will need to rebuild the container with `docker compose up --build`.
+## Deployment
+
+When a change is pushed to the `main` branch, it will be deployed to Amazon S3 and will be available at <https://timrogers.co.uk>, providing that it can be built and it passes the `html-proofer` tests.
 

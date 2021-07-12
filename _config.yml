@@ -30,3 +30,5 @@ exclude:
   - scripts
   - s3_website.yml
   - .DS_Store
+  - Dockerfile
+  - docker-compose.yml
