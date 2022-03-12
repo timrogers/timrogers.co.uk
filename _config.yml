@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Tim Rogers
 email: me@timrogers.co.uk
-description: Tim Rogers is based in London, UK and leads product at Duffel. Before Duffel, he was an early employee at GoCardless and ran his own startup, Reward Flight Finder.
+description: Tim Rogers is a product managerr and software engineer based in London, UK. He founded and sold Reward Flight Finder and helped build GoCardless and Duffel.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://timrogers.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
