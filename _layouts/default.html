@@ -5,7 +5,7 @@
     <title>{{ site.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.description }}{% endif %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="keywords" content="tim, rogers, developer, duffel, gocardless, avios, duffel, twilio, london, ba redemption finder, reward flight finder, ruby, javascript, php, elixir, rails, restforce">
+    <meta name="keywords" content="tim, rogers, developer, duffel, gocardless, avios, duffel, twilio, london, ba redemption finder, reward flight finder, ruby, javascript, php, elixir, rails, restforce, github">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Roboto+Slab:700" rel="stylesheet">
@@ -20,21 +20,12 @@
       <div class="container">
         <h1 class="site-title"><a href="/">Tim Rogers</a></h1>
 
-        <p>I am based in London, UK 🇬🇧 and I lead product at <a href="https://duffel.com/" target="_blank">Duffel</a>. We're building the best API to sell flights online.</p>
+        <p>I'm a product manager and software engineer based in London 🇬🇧.</p>
 
-        <p>Before Duffel, I was an early employee at <a href="https://gocardless.com" target="_blank">GoCardless</a> and I ran my own startup, <a href="https://rewardflightfinder.com" target="_blank">Reward Flight Finder</a>, which was acquired in 2020.</p>
+        <p>I founded and sold my own startup, <a href="https://rewardflightfinder.com">Reward Flight Finder</a>, and helped to build two <a href="https://www.ycombinator.com/topcompanies" targe="_blank">Y Combinator Top Companies</a> from the ground up: <a href="https://gocardless.com" target="_blank">GoCardless</a> and <a href="https://duffel.com" target="_blank">Duffel</a>.</p>
 
         {% if page.path contains "portfolio" %}
           <a class="portfolio-back" href="/">Back to homepage</a>
-        {% endif %}
-
-        {% if page.path == "index.html" %}
-          <p class="blog-link">
-            <b>Latest from me on the Duffel blog <a href="https://duffel.com/" target="_blank"></a><img
-                src="/images/duffel-icon@2x.png" alt="Duffel symbol" width="24px" class="img-icon"
-                style="padding-bottom: 6px" /></a>:</b> <a href="https://duffel.com/blog/three-things-needed-to-sell-flights"
-              target="_blank">The three things you need to do to start selling flights online</a>
-          </p>
         {% endif %}
       </div>
     </header>
