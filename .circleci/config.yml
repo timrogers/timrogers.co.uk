@@ -4,7 +4,7 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      - image: cimg/ruby:3.0.2
+      - image: cimg/ruby:3.1.0
     steps:
       - checkout
       - ruby/install-deps
@@ -12,7 +12,7 @@ jobs:
       - run: bundle exec scripts/test
   build-and-deploy:
     docker:
-      - image: timrogers/ruby-with-openjdk-8-jre:3.0.2
+      - image: timrogers/ruby-with-openjdk-8-jre:3.1.0
     steps:
       - checkout
       - ruby/install-deps

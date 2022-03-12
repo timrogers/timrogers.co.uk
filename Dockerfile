@@ -1,4 +1,4 @@
-FROM timrogers/ruby-with-openjdk-8-jre:3.0.2
+FROM timrogers/ruby-with-openjdk-8-jre:3.1.0
 WORKDIR /usr/src/app
 ADD Gemfile .
 ADD Gemfile.lock .
