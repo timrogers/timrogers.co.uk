@@ -5,11 +5,12 @@ require "html-proofer"
 puts `bundle exec jekyll build --drafts`
 
 HTMLProofer.check_directory('./_site', 
-                            url_swap: {
+                            swap_urls: {
                               'https://timrogers.co.uk' => '',
                             },
-                            url_ignore: [
-                              'https://www.shopping.ba.com/*'
+                            ignore_urls: [
+                              /shopping\.ba\.com/,
+                              /estore\.aerlingus\.com/,
                             ],
                             typhoeus: {
                               headers: HTMLProofer::Configuration::TYPHOEUS_DEFAULTS[:headers].merge({
