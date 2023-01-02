@@ -1,3 +1,0 @@
-#!/bin/bash
-
-S3_BUCKET=staging.timrogers.co.uk s3_website push
