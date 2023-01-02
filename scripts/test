@@ -11,6 +11,7 @@ HTMLProofer.check_directory('./_site',
                             ignore_urls: [
                               /shopping\.ba\.com/,
                               /estore\.aerlingus\.com/,
+                              /genius\.com/,
                             ],
                             typhoeus: {
                               headers: HTMLProofer::Configuration::TYPHOEUS_DEFAULTS[:headers].merge({
