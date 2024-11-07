@@ -7,7 +7,7 @@ The site is built using the Ruby gem [Jekyll](https://jekyllrb.com).
 ### Running locally with Ruby
 
 1. Install the dependencies by running `bundle`
-2. Start Jekyll by running `bundle exec jekyll --serve`
+2. Start Jekyll by running `bundle exec jekyll serve`
 3. Go to <http://localhost:4000>
 4. When you make changes to the site (pages, CSS, etc.), they will be reflected automatically. If you update the Jekyll `_config.yml`, you'll need to restart `jekyll`. If you change the `Gemfile`, you will need to re-run `bundle` and then restart `jekyll`.
 
