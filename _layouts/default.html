@@ -10,7 +10,7 @@
     content="tim, rogers, developer, duffel, gocardless, avios, duffel, twilio, london, ba redemption finder, reward flight finder, ruby, javascript, elixir, rails, restforce, github">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="/css/style.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Roboto+Slab:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   {% if page.path != "error.html" %}
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   {% endif %}
@@ -22,14 +22,17 @@
     <div class="container">
       <h1 class="site-title"><a href="/">Tim Rogers</a></h1>
 
-      <p>I'm a product manager and software engineer based in London 🇬🇧<br />Right now, I'm working on <a
-          href="https://github.com/github"><img src="/images/GitHub-Mark-120px-plus.png" alt="GitHub logo"
-            style="height: 1em; margin-bottom: 6px; margin-right: 8px;" class="img-icon" />GitHub Copilot</a>.</p>
+      <div class="hero-content">
+        <p class="intro">I'm a product manager and software engineer based in London 🇬🇧</p>
+        <p class="current-role">Right now, I'm working on <a
+            href="https://github.com/github"><img src="/images/GitHub-Mark-120px-plus.png" alt="GitHub logo"
+              style="height: 1em; margin-bottom: 6px; margin-right: 8px;" class="img-icon" />GitHub Copilot</a>.</p>
 
-      <p>I founded and sold my own startup, <a href="https://rewardflightfinder.com">Reward Flight Finder</a>, and
-        helped to build two <a href="https://www.ycombinator.com/topcompanies" targe="_blank">Y Combinator Top
-          Companies</a> from the ground up: <a href="https://gocardless.com" target="_blank">GoCardless</a> and <a
-          href="https://duffel.com" target="_blank">Duffel</a>.</p>
+        <p class="background">I founded and sold my own startup, <a href="https://rewardflightfinder.com">Reward Flight Finder</a>, and
+          helped to build two <a href="https://www.ycombinator.com/topcompanies" target="_blank">Y Combinator Top
+            Companies</a> from the ground up: <a href="https://gocardless.com" target="_blank">GoCardless</a> and <a
+            href="https://duffel.com" target="_blank">Duffel</a>.</p>
+      </div>
 
       {% if page.path contains "portfolio" %}
       <a class="portfolio-back" href="/">Back to homepage</a>
@@ -37,14 +40,21 @@
     </div>
   </header>
 
-  {{ content }}
+  <main style="flex: 1;">
+    {{ content }}
+  </main>
 
   <footer>
     <div class="container">
-      <p class="get-in-touch"><b>Want to get in touch?</b> Drop me an email at <a
-          href="mailto:me@timrogers.co.uk">me@timrogers.co.uk</a> <a href="https://github.com/timrogers" target="_blank"
-          alt="@timrogers on GitHub"><img src="/images/GitHub-Mark-120px-plus.png" alt="GitHub logo" width="24px"
-            class="img-icon" /></a></p>
+      <div class="contact-info">
+        <p><strong>Want to get in touch?</strong> Drop me an email at <a href="mailto:me@timrogers.co.uk">me@timrogers.co.uk</a></p>
+        <div class="social-links">
+          <a href="https://github.com/timrogers" target="_blank" aria-label="@timrogers on GitHub" class="social-link">
+            <img src="/images/GitHub-Mark-120px-plus.png" alt="GitHub logo" width="24px" class="img-icon" />
+            GitHub
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
