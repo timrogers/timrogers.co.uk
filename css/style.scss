@@ -1,19 +1,31 @@
 ---
 ---
 
-@import "variables";
-@import "blog-list";
-@import "button";
-@import "image";
-@import "list";
-@import "portfolio";
-@import "space";
+@use "variables" as *;
+@use "blog-list";
+@use "button";
+@use "image";
+@use "list";
+@use "portfolio";
+@use "space";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: 'Nunito', Helvetica, sans-serif;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   margin: 0;
   padding: 0;
   font-size: 18px;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $bg-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 750px) {
@@ -23,72 +35,226 @@ body {
 }
 
 .container {
-  width: 85%;
-  max-width: 900px;
-  margin: auto;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 85%;
+    padding: 0 2rem;
+  }
 }
 
 header {
   width: 100%;
-  margin: 0 0 2.5em 0;
-  padding: 2em 0;
-  background-color: lighten($brand-color, 70%);
+  margin: 0 0 3rem 0;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border-bottom: 1px solid $border-color;
 
   p {
-    font-size: 1.5em;
+    font-size: 1.25rem;
+    color: $text-color;
+    margin: 1rem 0;
+    line-height: 1.7;
 
     &.subtitle {
-      font-size: 1em;
-      opacity: 0.5;
+      font-size: 1rem;
+      color: $text-color-light;
     }
   }
 
   .blog-link {
-    display: block;
-    font-size: 1.3em;
+    display: inline-block;
+    font-size: 1.1rem;
     border: 2px solid $brand-color;
-    padding: 1em;
-    margin: 1.5em 0 1.2em 0;
+    padding: 0.75rem 1.5rem;
+    margin: 1.5rem 0 1.2rem 0;
+    border-radius: $border-radius-sm;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: $brand-color;
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 4rem 0;
+    
+    p {
+      font-size: 1.4rem;
+    }
+    
+    .hero-content {
+      .intro {
+        font-size: 1.3rem;
+        font-weight: 500;
+        
+        @media (min-width: 768px) {
+          font-size: 1.5rem;
+        }
+      }
+      
+      .current-role {
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        
+        @media (min-width: 768px) {
+          font-size: 1.25rem;
+        }
+      }
+      
+      .background {
+        font-size: 1rem;
+        color: $text-color-light;
+        
+        @media (min-width: 768px) {
+          font-size: 1.1rem;
+        }
+      }
+    }
   }
 }
 
 footer {
-  width: 100;
-  margin: 2.5em 0 0 0;
-  padding: 2em 0;
-  background-color: lighten($brand-color, 70%);
+  width: 100%;
+  margin: 4rem 0 0 0;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border-top: 1px solid $border-color;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.1rem;
+  
+  .contact-info {
+    .get-in-touch {
+      color: $text-color;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .social-links {
+      margin-top: 1.5rem;
+      
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.4rem 0.75rem;
+        background: transparent;
+        border: 1px solid rgba(37, 99, 235, 0.3);
+        border-radius: $border-radius-sm;
+        transition: all 0.2s ease;
+        margin: 0 0.5rem 0.5rem 0;
+        color: rgba(37, 99, 235, 0.8);
+        font-size: 0.95rem;
+        
+        &:hover {
+          background: rgba(37, 99, 235, 0.1);
+          border-color: rgba(37, 99, 235, 0.5);
+          color: $brand-color;
+        }
+        
+        .img-icon {
+          margin-right: 0.5rem;
+          opacity: 0.8;
+        }
+      }
+    }
+    
+    a:not(.social-link) {
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: $brand-color-light;
+      }
+    }
+  }
 }
 
 h1.site-title {
   font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
 
   a {
     text-decoration: none;
+    color: $brand-color;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: $brand-color-light;
+    }
   }
 }
 
 h1, h2, h3, h4, h5 {
   color: $brand-color;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.5rem;
+  
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
 }
 
 h2 {
-  font-size: 2.4em;
+  font-size: 2rem;
+  margin: 2rem 0 1rem 0;
+  
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.25rem;
+  margin: 1.5rem 0 0.5rem 0;
+  
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 a {
   color: $brand-color;
+  text-decoration: none;
+  transition: color 0.2s ease;
 
   &:hover {
-    color: darken($brand-color, 10%);
+    color: $brand-color-light;
+  }
+  
+  &:focus {
+    outline: 2px solid $brand-color;
+    outline-offset: 2px;
+  }
+}
+
+.img-icon {
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
   }
 }

@@ -1,4 +1,5 @@
-@import "variables";
+@use "sass:color";
+@use "variables" as *;
 
 a.button {
   background-color: $brand-color;
@@ -9,6 +10,6 @@ a.button {
 
   &:hover {
     color: #FFF;
-    background-color: darken($brand-color, 15%);
+    background-color: color.scale($brand-color, $lightness: -28.125%);
   }
 }
