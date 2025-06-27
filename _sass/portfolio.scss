@@ -1,5 +1,5 @@
-@import "space";
-@import "variables";
+@use "space";
+@use "variables" as *;
 
 a.portfolio-back {
   display: inline-flex;

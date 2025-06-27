@@ -1,13 +1,13 @@
 ---
 ---
 
-@import "variables";
-@import "blog-list";
-@import "button";
-@import "image";
-@import "list";
-@import "portfolio";
-@import "space";
+@use "variables" as *;
+@use "blog-list";
+@use "button";
+@use "image";
+@use "list";
+@use "portfolio";
+@use "space";
 
 html {
   scroll-behavior: smooth;
