@@ -10,6 +10,15 @@ a.button {
 
   &:hover {
     color: #FFF;
-    background-color: color.scale($brand-color, $lightness: -28.125%);
+    background-color: color.scale($brand-color-scss, $lightness: -28.125%);
+  }
+}
+
+// Dark theme override for button hover
+[data-theme="dark"] {
+  a.button {
+    &:hover {
+      background-color: #2563eb; // Darker shade for dark mode
+    }
   }
 }
