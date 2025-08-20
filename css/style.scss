@@ -26,6 +26,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 @media (min-width: 750px) {
@@ -54,6 +55,47 @@ header {
   padding: 3rem 0;
   background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
   border-bottom: 1px solid $border-color;
+  transition: background 0.3s ease, border-color 0.3s ease;
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .theme-toggle {
+    background: none;
+    border: 2px solid $border-color;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+
+    &:hover {
+      background-color: $bg-color-alt;
+      border-color: $brand-color;
+      transform: scale(1.1);
+    }
+
+    &:focus {
+      outline: 2px solid $brand-color;
+      outline-offset: 2px;
+    }
+
+    .theme-toggle-icon {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .theme-toggle-icon {
+      transform: rotate(180deg);
+    }
+  }
 
   p {
     font-size: 1.25rem;
@@ -130,6 +172,7 @@ footer {
   border-top: 1px solid $border-color;
   text-align: center;
   font-size: 1.1rem;
+  transition: background 0.3s ease, border-color 0.3s ease;
   
   .contact-info {
     .get-in-touch {
