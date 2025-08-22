@@ -1,13 +1,29 @@
-$brand-color: #2563eb;
-$brand-color-light: #3b82f6;
-$brand-color-dark: #1d4ed8;
-$text-color: #1f2937;
-$text-color-light: #6b7280;
-$bg-color: #ffffff;
-$bg-color-alt: #f9fafb;
-$border-color: #e5e7eb;
-$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-$shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-$shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+// CSS Custom Properties for theme switching
+:root {
+  --brand-color: #2563eb;
+  --brand-color-light: #3b82f6;
+  --brand-color-dark: #1d4ed8;
+  --text-color: #1f2937;
+  --text-color-light: #6b7280;
+  --bg-color: #ffffff;
+  --bg-color-alt: #f9fafb;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+// SASS variables for compatibility
+$brand-color: var(--brand-color);
+$brand-color-light: var(--brand-color-light);
+$brand-color-dark: var(--brand-color-dark);
+$text-color: var(--text-color);
+$text-color-light: var(--text-color-light);
+$bg-color: var(--bg-color);
+$bg-color-alt: var(--bg-color-alt);
+$border-color: var(--border-color);
+$shadow-sm: var(--shadow-sm);
+$shadow-md: var(--shadow-md);
+$shadow-lg: var(--shadow-lg);
 $border-radius: 12px;
 $border-radius-sm: 8px;

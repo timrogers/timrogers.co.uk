@@ -1,0 +1,32 @@
+// Dark mode color scheme using prefers-color-scheme
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand-color: #60a5fa;
+    --brand-color-light: #93c5fd;
+    --brand-color-dark: #1e293b; // Appropriate dark color instead of white
+    --text-color: #f1f5f9;
+    --text-color-light: #94a3b8;
+    --bg-color: #0f172a;
+    --bg-color-alt: #1e293b;
+    --border-color: #334155;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  }
+  
+  // Adjust specific elements for dark mode
+  header, footer {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(147, 197, 253, 0.1) 100%);
+  }
+  
+  .social-link {
+    border-color: rgba(96, 165, 250, 0.3) !important;
+    color: rgba(96, 165, 250, 0.8) !important;
+    
+    &:hover {
+      background: rgba(96, 165, 250, 0.1) !important;
+      border-color: rgba(96, 165, 250, 0.5) !important;
+      color: var(--brand-color) !important;
+    }
+  }
+}
