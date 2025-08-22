@@ -9,9 +9,9 @@ a.portfolio-back {
   text-decoration: none;
   color: $brand-color;
   padding: 0.5rem 1rem;
-  border: 1px solid $border-color;
+  border: 1px solid var(--border-color);
   border-radius: $border-radius-sm;
-  background: $bg-color;
+  background: var(--bg-color);
   transition: all 0.2s ease;
   box-shadow: $shadow-sm;
   
@@ -21,7 +21,7 @@ a.portfolio-back {
   }
   
   &:hover {
-    background: $bg-color-alt;
+    background: var(--bg-color-alt);
     border-color: $brand-color;
     transform: translateX(-2px);
     box-shadow: $shadow-md;
@@ -29,7 +29,7 @@ a.portfolio-back {
 }
 
 .portfolio-item-time-period {
-  color: #333333;
+  color: var(--text-color-light);
   padding-left: 3px;
 }
 
@@ -47,12 +47,12 @@ a.portfolio-back {
     a {
       display: block;
       padding: 1.5rem;
-      background: $bg-color;
-      border: 1px solid $border-color;
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
       border-radius: $border-radius;
       box-shadow: $shadow-sm;
       transition: all 0.3s ease;
-      color: $text-color;
+      color: var(--text-color);
       font-weight: 600;
       font-size: 1.1rem;
       position: relative;
@@ -100,7 +100,7 @@ a.portfolio-back {
     }
 
     .portfolio-list-item-date {
-      color: $text-color-light;
+      color: var(--text-color-light);
       font-weight: 400;
       font-size: 0.9rem;
       display: block;
@@ -112,7 +112,7 @@ a.portfolio-back {
 .portfolio-projects {
   .portfolio-project {
     padding: 2rem 0;
-    border-top: 1px solid $border-color;
+    border-top: 1px solid var(--border-color);
     
     &:first-child {
       padding-top: 0;
@@ -130,8 +130,8 @@ a.portfolio-back {
       margin: 0.75rem 0;
       font-size: 1rem;
       padding: 0.5rem 1rem;
-      background: $bg-color-alt;
-      border: 1px solid $border-color;
+      background: var(--bg-color-alt);
+      border: 1px solid var(--border-color);
       border-radius: $border-radius-sm;
       transition: all 0.2s ease;
       

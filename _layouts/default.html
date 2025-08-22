@@ -20,7 +20,12 @@
 <body>
   <header>
     <div class="container">
-      <h1 class="site-title"><a href="/">Tim Rogers</a></h1>
+      <div class="header-top">
+        <h1 class="site-title"><a href="/">Tim Rogers</a></h1>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-toggle-icon">🌙</span>
+        </button>
+      </div>
 
       <div class="hero-content">
         <p class="intro">I'm a product manager and software engineer based in London 🇬🇧</p>
@@ -76,6 +81,49 @@
         'hitCallback': function () { document.location = url; }
       });
     }
+
+    // Theme switching functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.querySelector('.theme-toggle-icon');
+      const body = document.body;
+      
+      // Check for saved theme preference or default to light mode
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      
+      // Apply the theme on page load
+      if (currentTheme === 'dark') {
+        body.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '☀️';
+      } else {
+        body.removeAttribute('data-theme');
+        themeIcon.textContent = '🌙';
+      }
+      
+      // Toggle theme on button click
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = body.getAttribute('data-theme');
+        
+        if (currentTheme === 'dark') {
+          body.removeAttribute('data-theme');
+          themeIcon.textContent = '🌙';
+          localStorage.setItem('theme', 'light');
+        } else {
+          body.setAttribute('data-theme', 'dark');
+          themeIcon.textContent = '☀️';
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+      
+      // Check system preference on page load if no saved preference
+      if (!localStorage.getItem('theme')) {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          body.setAttribute('data-theme', 'dark');
+          themeIcon.textContent = '☀️';
+          localStorage.setItem('theme', 'dark');
+        }
+      }
+    });
   </script>
 </body>
 
