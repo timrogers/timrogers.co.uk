@@ -4,14 +4,20 @@ require "html-proofer"
 
 puts `bundle exec jekyll build --drafts`
 
+# This script runs all tests including external links
+# Use this when you have good network connectivity and want to check external links
 HTMLProofer.check_directory('./_site', 
                             swap_urls: {
                               'https://timrogers.co.uk' => '',
                             },
-                            disable_external: true,
+                            ignore_urls: [
+                              /shopping\.ba\.com/,
+                              /estore\.aerlingus\.com/,
+                              /genius\.com/,
+                            ],
                             typhoeus: {
-                              timeout: 10,
-                              connecttimeout: 5,
+                              timeout: 30,
+                              connecttimeout: 10,
                               headers: HTMLProofer::Configuration::TYPHOEUS_DEFAULTS[:headers].merge({
                                 "Accept" => "text/html"
                               })
