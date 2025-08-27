@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'find'
+require 'nokogiri'
+
+puts "Checking internal portfolio links..."
+
+# Build the site first
+puts "Building site..."
+system('bundle exec jekyll build')
+
+unless $?.success?
+  puts "❌ Jekyll build failed"
+  exit 1
+end
+
+# Find all HTML files in _site
+html_files = []
+Find.find('./_site') do |path|
+  html_files << path if path =~ /\.html$/
+end
+
+# Track portfolio links
+portfolio_links = []
+missing_links = []
+
+html_files.each do |file|
+  content = File.read(file)
+  doc = Nokogiri::HTML(content)
+  
+  doc.css('a[href^="/portfolio/"]').each do |link|
+    href = link['href']
+    portfolio_links << href unless portfolio_links.include?(href)
+    
+    # Check if the file exists (remove leading slash and add _site)
+    file_path = "./_site#{href}"
+    file_path += "/index.html" unless file_path.end_with?('.html')
+    
+    unless File.exist?(file_path)
+      missing_links << { href: href, found_in: file }
+    end
+  end
+end
+
+puts "Found #{portfolio_links.length} unique portfolio links:"
+portfolio_links.sort.each { |link| puts "  #{link}" }
+
+if missing_links.empty?
+  puts "✅ All portfolio links point to existing pages!"
+  exit 0
+else
+  puts "❌ Found #{missing_links.length} broken portfolio links:"
+  missing_links.each do |link|
+    puts "  #{link[:href]} (found in #{link[:found_in]})"
+  end
+  exit 1
+end
