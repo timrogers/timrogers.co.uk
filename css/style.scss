@@ -9,6 +9,22 @@
 @use "portfolio";
 @use "space";
 
+:root {
+  --text-color: #{$text-color};
+  --text-color-light: #{$text-color-light};
+  --bg-color: #{$bg-color};
+  --bg-color-alt: #{$bg-color-alt};
+  --border-color: #{$border-color};
+}
+
+[data-theme="dark"] {
+  --text-color: #{$dark-text-color};
+  --text-color-light: #{$dark-text-color-light};
+  --bg-color: #{$dark-bg-color};
+  --bg-color-alt: #{$dark-bg-color-alt};
+  --border-color: #{$dark-border-color};
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -19,13 +35,14 @@ body {
   padding: 0;
   font-size: 18px;
   line-height: 1.6;
-  color: $text-color;
-  background-color: $bg-color;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @media (min-width: 750px) {
@@ -53,17 +70,48 @@ header {
   margin: 0 0 3rem 0;
   padding: 3rem 0;
   background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid var(--border-color);
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .theme-toggle {
+    background: none;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+
+    &:hover {
+      border-color: $brand-color;
+      background-color: rgba(37, 99, 235, 0.1);
+    }
+
+    &:focus {
+      outline: 2px solid $brand-color;
+      outline-offset: 2px;
+    }
+  }
 
   p {
     font-size: 1.25rem;
-    color: $text-color;
+    color: var(--text-color);
     margin: 1rem 0;
     line-height: 1.7;
 
     &.subtitle {
       font-size: 1rem;
-      color: $text-color-light;
+      color: var(--text-color-light);
     }
   }
 
@@ -112,7 +160,7 @@ header {
       
       .background {
         font-size: 1rem;
-        color: $text-color-light;
+        color: var(--text-color-light);
         
         @media (min-width: 768px) {
           font-size: 1.1rem;
@@ -127,13 +175,13 @@ footer {
   margin: 4rem 0 0 0;
   padding: 3rem 0;
   background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
-  border-top: 1px solid $border-color;
+  border-top: 1px solid var(--border-color);
   text-align: center;
   font-size: 1.1rem;
   
   .contact-info {
     .get-in-touch {
-      color: $text-color;
+      color: var(--text-color);
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
     }
