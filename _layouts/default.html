@@ -20,7 +20,12 @@
 <body>
   <header>
     <div class="container">
-      <h1 class="site-title"><a href="/">Tim Rogers</a></h1>
+      <div class="header-top">
+        <h1 class="site-title"><a href="/">Tim Rogers</a></h1>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-toggle-icon">🌙</span>
+        </button>
+      </div>
 
       <div class="hero-content">
         <p class="intro">I'm a product manager and software engineer based in London 🇬🇧</p>
@@ -76,6 +81,66 @@
         'transport': 'beacon',
         'hitCallback': function () { document.location = url; }
       });
+    }
+
+    // Theme switching functionality
+    function initTheme() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.querySelector('.theme-toggle-icon');
+      
+      if (!themeToggle || !themeIcon) return;
+      
+      // Check for saved theme preference or default to system preference
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      function setTheme(theme) {
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          themeIcon.textContent = '☀️';
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          themeIcon.textContent = '🌙';
+        }
+        localStorage.setItem('theme', theme);
+      }
+      
+      // Initialize theme
+      if (savedTheme) {
+        setTheme(savedTheme);
+      } else if (systemPrefersDark) {
+        setTheme('dark');
+      }
+      
+      // Toggle theme on button click
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+      });
+      
+      // Listen for system theme changes (if supported)
+      if (window.matchMedia) {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const handleChange = function(e) {
+          if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light');
+          }
+        };
+        
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', handleChange);
+        } else if (mediaQuery.addListener) {
+          mediaQuery.addListener(handleChange);
+        }
+      }
+    }
+    
+    // Initialize theme when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTheme);
+    } else {
+      initTheme();
     }
   </script>
 </body>
