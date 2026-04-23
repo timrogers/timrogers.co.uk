@@ -20,7 +20,12 @@
 <body>
   <header>
     <div class="container">
-      <h1 class="site-title"><a href="/">Tim Rogers</a></h1>
+      <div class="header-top">
+        <h1 class="site-title"><a href="/">Tim Rogers</a></h1>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span class="theme-toggle-icon">🌙</span>
+        </button>
+      </div>
 
       <div class="hero-content">
         <p class="intro">I'm a product manager and software engineer based in London 🇬🇧</p>
@@ -77,6 +82,34 @@
         'hitCallback': function () { document.location = url; }
       });
     }
+
+    // Theme switching functionality
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      // Update toggle icon
+      const icon = document.querySelector('.theme-toggle-icon');
+      icon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    }
+
+    // Initialize theme on page load
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      
+      document.documentElement.setAttribute('data-theme', theme);
+      
+      // Update toggle icon
+      const icon = document.querySelector('.theme-toggle-icon');
+      if (icon) {
+        icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      }
+    })();
   </script>
 </body>
 
