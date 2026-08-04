@@ -12,6 +12,10 @@ HTMLProofer.check_directory('./_site',
                               /shopping\.ba\.com/,
                               /estore\.aerlingus\.com/,
                               /genius\.com/,
+                              /rewardflightfinder\.com/,
+                              /baredemptionfinder\.com/,
+                              /packtpub\.com/,
+                              /writethedocs\.org/,
                             ],
                             typhoeus: {
                               headers: HTMLProofer::Configuration::TYPHOEUS_DEFAULTS[:headers].merge({
