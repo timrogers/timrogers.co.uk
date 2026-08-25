@@ -10,6 +10,6 @@ a.button {
 
   &:hover {
     color: #FFF;
-    background-color: color.scale($brand-color, $lightness: -28.125%);
+    background-color: $brand-color-dark;
   }
 }
