@@ -10,6 +10,13 @@ a.button {
 
   &:hover {
     color: #FFF;
-    background-color: color.scale($brand-color, $lightness: -28.125%);
+    background-color: color.scale($brand-color-static, $lightness: -28.125%);
+  }
+  
+  // Dark mode hover color
+  :root[data-theme="dark"] & {
+    &:hover {
+      background-color: var(--brand-color-dark);
+    }
   }
 }
